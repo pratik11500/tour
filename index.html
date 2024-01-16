@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travelify Tours</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="icon"
+    href="https://media.discordapp.net/attachments/1188901049365446727/1188922863948935359/UVjDhbZ6W9Hyp4ARIsy9NAwEAACRAiAaBGhBmWAABCgjACIFmXooWEgAASIEADRIkINygABIEAZARAtytBDw0AACBAhAKJFhBqUAQJAgDICIFqUoYeGgQAQIEIARIsINSgDBIAAZQRAtChDDw0DASBAhACIFhFqUAYIAAHKCIBoUYYeGgYCQIAIARAtItSgDBAAApQRANGiDD00DASAABECIFpEqEEZIAAEKCMAokUZemgYCAABIgRAtIhQgzJAAAhQRgBEizL00DAQAAJECIBoEaEGZYAAEKCMAIgWZeihYSAABIgQANEiQg3KAAEgQBkBEC3K0EPDQAAIECEAokWEGpQBAkCAMgIgWpShh4aBABAgQgBEiwg1KAMEgABlBEC0KEMPDQMBIECEAIgWEWpQBggAAcoIgGhRhh4aBgJAgAgBEC0i1KAMEAAClBEA0aIMPTQMBIAAEQIgWkSoQRkgAAQoIwCiRRl6aBgIAAEiBEC0iFCDMkAACFBGA..png?ex=659c49b3&is=6589d4b3&hm=97d32238e5f24db856e76c07165d992b787a0a56332f58657f0509750e9dd2df&=&format=webp&quality=lossless">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+  </script>
+  <script src="script.js">
+  </script>
+  <script>
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    }, false);
+  </script>
+  <script>
+    document.addEventListener("keydown", (e) => {
+      // USE THIS TO DISABLE CONTROL AND ALL FUNCTION KEYS
+      // if (e.ctrlKey || (e.keyCode>=112 && e.keyCode<=123)) {
+      // THIS WILL ONLY DISABLE CONTROL AND F12
+      if (e.ctrlKey || e.keyCode == 123) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="https://pratik11500.github.io/Profile/" target="_blank">
+      <img
+        src="https://media.discordapp.net/attachments/1188901049365446727/1188922863948935359/UVjDhbZ6W9Hyp4ARIsy9NAwEAACRAiAaBGhBmWAABCgjACIFmXooWEgAASIEADRIkINygABIEAZARAtytBDw0AACBAhAKJFhBqUAQJAgDICIFqUoYeGgQAQIEIARIsINSgDBIAAZQRAtChDDw0DASBAhACIFhFqUAYIAAHKCIBoUYYeGgYCQIAIARAtItSgDBAAApQRANGiDD00DASAABECIFpEqEEZIAAEKCMAokUZemgYCAABIgRAtIhQgzJAAAhQRgBEizL00DAQAAJECIBoEaEGZYAAEKCMAIgWZeihYSAABIgQANEiQg3KAAEgQBkBEC3K0EPDQAAIECEAokWEGpQBAkCAMgIgWpShh4aBABAgQgBEiwg1KAMEgABlBEC0KEMPDQMBIECEAIgWEWpQBggAAcoIgGhRhh4aBgJAgAgBEC0i1KAMEAAClBEA0aIMPTQMBIAAEQIgWkSoQRkgAAQoIwCiRRl6aBgIAAEiBEC0iFCDMkAACFBGA..png?ex=659c49b3&is=6589d4b3&hm=97d32238e5f24db856e76c07165d992b787a0a56332f58657f0509750e9dd2df&=&format=webp&quality=lossless"
+        alt="Pratik" />
+    </a>
+    <nav>
+      <ul class="nav-bar">
+        <div class="bg">
+        </div>
+        <li>
+          <a class="nav-link" href="#hero">Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#tours">Tours
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#destinations">Destinations
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#blog">Blog
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#contact">Contact
+          </a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <div class="line1">
+        </div>
+        <div class="line2">
+        </div>
+        <div class="line3">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-bar a');
+    const navToggle = document.querySelector('.hamburger');
+    const navbar = document.querySelector('header');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        window.scrollTo({
+          top: targetElement.offsetTop - 100,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        navbar.classList.add('sticky');
+      } else {
+        navbar.classList.remove('sticky');
+      }
+    });
+  </script>
+
+  <section id="hero" class="hero">
+    <div class="container">
+      <h2>Explore the world with Travelify Tours</h2>
+      <p class="website-description">Discover new destinations, experience exciting tours, and create unforgettable
+        memories.</p>
+    </div>
+  </section>
+
+  <section id="tours" class="tours">
+    <div class="container">
+      <h3> Popular Tours</h3>
+      <br>
+      <div class="tour-card">
+        <img
+          src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcR-Nbu9wv3UudluGjs3pegVs46lOqI2HypmBuqYA-uwoNrijCxMN-neFaEgwqlrbr4Y">
+        <h4>Tour 1</h4>
+        <p>-</p>
+      </div>
+      <div class="tour-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/BeachFun.jpg" alt="Tour Image">
+        <h4>Tour 2</h4>
+        <p>-</p>
+      </div>
+      <div class="tour-card">
+        <img
+          src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTDSwjwiW92K2MBeK8rQL0MTtVcZ6xT-cH24xfaj3Aj_UDnPhmIrOY6ncRkzthXyJTU"
+          alt="Tour Image">
+        <h4>Tour 3</h4>
+        <p>-</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="destinations" class="destinations">
+    <div class="container">
+      <h3>Popular Destinations</h3>
+      <div class="destination-card">
+        <img
+          src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQu14ZrQcOZOLXw8BKotigqUK1P6GZU3gqyWkXogSy8EWfbKJObTsBngF2nRew8gWm2"
+          alt="Destination Image">
+        <h4>Destination 1</h4>
+      </div>
+      <div class="destination-card">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Trayambakeshwar_Temple_VK.jpg/224px-Trayambakeshwar_Temple_VK.jpg"
+          alt="Destination Image">
+        <h4>Destination 2</h4>
+      </div>
+      <div class="destination-card">
+        <img
+          src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcT0-gv37oK3eKDUcG6jBe3KJ2iDvT9HNqLTLW2h7Ta11i0JaLuUyiD_MCtxWWIXGhee"
+          alt="Destination Image">
+        <h4>Destination 3</h4>
+      </div>
+      <div class="destination-card">
+        <img
+          src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQPayAFx9Lw3QRFGGzqOaMHSlZEqtuKLgDm2Byi9G8VyrC29uzw9kMut2kXx47fMf0e"
+          alt="Destination Image">
+        <h4>Destination 4</h4>
+      </div>
+      <div class="destination-card">
+        <img
+          src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRkcJGAqpUBSA0uMVq_dmgWH4rXH2dtfHBFVw7WgqQo1D7J5SGrluYwB13HRoRz351F"
+          alt="Destination Image">
+        <h4>Destination 5</h4>
+      </div>
+      <div class="destination-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Shyok_river_Ladakh.jpg" alt="Destination Image">
+        <h4>Destination 6</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog">
+    <div class="container">
+      <h3>Latest Blog Posts</h3>
+      <div class="blog-post">
+        <img src="https://th.bing.com/th/id/OIP.pUwbytqwaIodvbcO8UaSMgAAAA?pid=ImgDet&rs=1" alt="Blog Post Image">
+        <h4>Blog Post Title 1</h4>
+        <p>-</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-post">
+        <img src="https://i.ytimg.com/vi/IuP2Rbfp-v0/hqdefault.jpg" alt="Blog Post Image">
+        <h4>Blog Post Title 2</h4>
+        <p>-</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+      <div class="blog-post">
+        <img src="https://www.maskblogspot.com/wp-content/uploads/2020/05/jaisalmer-1024x683.jpg" alt="Blog Post Image">
+        <h4>Blog Post Title 3</h4>
+        <p>-</p>
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h3>Contact Us</h3>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="copyright">Made by
+    <a href="https://pratik11500.github.io/Profile/" target="_blank"> Pratik.
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
